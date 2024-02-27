@@ -21,7 +21,9 @@ export const InputSelect = ({ title }) => {
           </option>
           {
             cities.map((city) => (
-              <option value={city.city}>{city.city}</option>
+              <option key={city.id} value={city.city}>
+                {city.city}
+              </option>
             ))
             //   <option value="Tokio">Tokio</option>
             // <option value="Barselona">Barselona</option>
