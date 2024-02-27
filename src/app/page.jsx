@@ -13,6 +13,11 @@ export default function Home() {
   const [today, setToday] = useState();
   const [startTrip, setStartTrip] = useState();
   const [active, setActive] = useState();
+  const [city, setCity] = useState();
+
+  const onSeach = (data) => {
+    setCity(data);
+  };
 
   const onCardClick = async (data) => {
     const { city, start, end } = data;
@@ -29,8 +34,8 @@ export default function Home() {
       <div className={styles.conteiner}>
         <div className={styles.weather_list}>
           <h1>Weather Forecast</h1>
-          <Search />
-          <CityList active={active} click={onCardClick} />
+          <Search search={onSeach} />
+          <CityList city={city} active={active} click={onCardClick} />
           {cityWeather && <Week weather={cityWeather} />}
         </div>
         <div>

@@ -1,5 +1,6 @@
 .conteiner {
   margin-top: 30px;
+  width: 680px;
 }
 
 .list {
@@ -12,4 +13,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.btn_conteiner {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }

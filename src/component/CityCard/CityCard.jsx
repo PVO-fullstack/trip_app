@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./CityCard.module.css";
 
 export const CityCard = ({ city, click, active }) => {

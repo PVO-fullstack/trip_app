@@ -10,23 +10,29 @@ const exampleTrip = [
   { city: "Kyiv", start: "2024-06-03", end: "2024-06-10", img: "/kyiv.jpeg" },
 ];
 
-export const CityList = ({ click, active }) => {
+export const CityList = ({ click, active, city }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [allTrips, setAllTrips] = useState();
   const [trips, setTrips] = useState();
   const [firstTrip, setFirstTrip] = useState(0);
-  const [nextBtnDisable, setNextBtnDisable] = useState(true);
+  const [nextBtnDisable, setNextBtnDisable] = useState(false);
   const [prevBtnDisable, setPrevBtnDisable] = useState(true);
+  const [isBtn, setIsBtn] = useState(false);
 
   useEffect(() => {
+    if (city) {
+      setTrips(city);
+      return;
+    }
     const getTrips = localStorage.getItem("trip");
     if (getTrips) {
       const parseTrips = JSON.parse(getTrips);
       setAllTrips(parseTrips);
       if (parseTrips.length > 3) {
+        setIsBtn(true);
         const firstTrips = parseTrips.slice(firstTrip, firstTrip + 3);
         setTrips(firstTrips);
-        setNextBtnDisable(false);
+        // setNextBtnDisable(false);
         return;
       }
       setTrips(parseTrips);
@@ -34,9 +40,7 @@ export const CityList = ({ click, active }) => {
     }
     setTrips(exampleTrip);
     localStorage.setItem("trip", JSON.stringify(exampleTrip));
-  }, [isOpen, firstTrip]);
-
-  console.log("isOpen", nextBtnDisable, firstTrip, allTrips?.length);
+  }, [isOpen, firstTrip, city]);
 
   const handleClick = () => {
     setIsOpen(true);
@@ -91,22 +95,24 @@ export const CityList = ({ click, active }) => {
           </Modal>
         )}
       </ul>
-      <div className={styles.btn_conteiner}>
-        <button
-          disabled={prevBtnDisable}
-          onClick={handlePrevBtnClick}
-          type="button"
-        >
-          Prev
-        </button>
-        <button
-          disabled={nextBtnDisable}
-          onClick={handleNextBtnClick}
-          type="button"
-        >
-          Next
-        </button>
-      </div>
+      {isBtn && (
+        <div className={styles.btn_conteiner}>
+          <button
+            disabled={prevBtnDisable}
+            onClick={handlePrevBtnClick}
+            type="button"
+          >
+            Prev
+          </button>
+          <button
+            disabled={nextBtnDisable}
+            onClick={handleNextBtnClick}
+            type="button"
+          >
+            Next
+          </button>
+        </div>
+      )}
     </>
   );
 };

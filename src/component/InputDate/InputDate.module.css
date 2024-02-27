@@ -1,4 +1,13 @@
 .label {
   display: flex;
   flex-direction: column;
+  color: black;
+}
+
+.required {
+  color: red;
+}
+
+.none {
+  display: none;
 }

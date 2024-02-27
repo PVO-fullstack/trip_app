@@ -6,16 +6,28 @@ import cities from "@/data/cities.json";
 
 export const InputSelect = ({ title }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [inValid, setInValid] = useState(false);
 
   return (
     <>
       <label className={styles.label}>
-        {title}
-        <select onClick={() => setIsOpen(true)} required name="city">
+        <p>
+          <span className={inValid ? styles.none : styles.required}>*</span>
+          {title}
+        </p>
+        <select
+          onChange={() => setInValid(true)}
+          className={styles.city}
+          onClick={() => setIsOpen(true)}
+          required
+          defaultValue={"Please select a city"}
+          name="city"
+        >
           <option
             className={isOpen ? styles.placeholder : ""}
-            selected
-            value="Select"
+            // selected
+            disabled
+            value="Please select a city"
           >
             Please select a city
           </option>
