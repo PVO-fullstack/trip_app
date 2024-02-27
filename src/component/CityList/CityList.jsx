@@ -15,7 +15,7 @@ export const CityList = ({ click, active }) => {
   const [allTrips, setAllTrips] = useState();
   const [trips, setTrips] = useState();
   const [firstTrip, setFirstTrip] = useState(0);
-  const [nextBtnDisable, setNextBtnDisable] = useState(false);
+  const [nextBtnDisable, setNextBtnDisable] = useState(true);
   const [prevBtnDisable, setPrevBtnDisable] = useState(true);
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export const CityList = ({ click, active }) => {
       if (parseTrips.length > 3) {
         const firstTrips = parseTrips.slice(firstTrip, firstTrip + 3);
         setTrips(firstTrips);
+        setNextBtnDisable(false);
         return;
       }
       setTrips(parseTrips);

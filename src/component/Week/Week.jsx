@@ -17,7 +17,8 @@ export const Week = ({ weather }) => {
                 (item.icon === "partly-cloudy-day" && "partlycloudy") ||
                 (item.icon === "snow" && "snowy") ||
                 (item.icon === "cloudy" && "cloudy") ||
-                (item.icon === "clear-day" && "sunny")
+                (item.icon === "clear-day" && "sunny") ||
+                (item.icon === "wind" && "windy")
               }
               width={80}
               height={80}

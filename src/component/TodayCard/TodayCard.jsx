@@ -21,7 +21,8 @@ export const TodayCard = ({ today, time }) => {
                 (icon === "partly-cloudy-day" && "partlycloudy") ||
                 (icon === "snow" && "snowy") ||
                 (icon === "cloudy" && "cloudy") ||
-                (icon === "clear-day" && "sunny")
+                (icon === "clear-day" && "sunny") ||
+                (icon === "wind" && "windy")
               }
               width={50}
               height={50}
