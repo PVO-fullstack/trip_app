@@ -1,0 +1,8 @@
+.placeholder {
+  display: none;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}

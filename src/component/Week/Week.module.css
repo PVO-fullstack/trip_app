@@ -1,0 +1,15 @@
+.conteiner {
+  margin-top: 30px;
+}
+
+.list {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "city": "Berlin",
+        "img": "/berlin.jpg"
+    },
+    {
+        "id": 2,
+        "city": "Tokio",
+        "img": "/tokio.jpeg"
+    },
+    {
+        "id": 3,
+        "city": "Barselona",
+        "img": "/barcelona.jpg"
+    },
+    {
+        "id": 4,
+        "city": "Hong Kong",
+        "img": "/hongkong.webp"
+    },
+    {
+        "id": 5,
+        "city": "Machu Picchu",
+        "img": "/machupicchu.jpg"
+    }
+]

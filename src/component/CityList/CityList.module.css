@@ -1,0 +1,25 @@
+.conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add {
+  width: 200px;
+  height: 170px;
+  background-color: #d0d0d038;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus {
+  font-size: 30px;
+}
+
+.btn_conteiner {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
