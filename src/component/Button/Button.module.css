@@ -6,9 +6,11 @@
   background-color: #5c5cda;
   color: #fff;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .btn:disabled {
   background-color: #a6a6c092;
   border-color: #a6a6c092;
+  cursor: default;
 }
