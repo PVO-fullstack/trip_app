@@ -11,11 +11,6 @@ export const InputDate = ({ title, name }) => {
   const maxDay = new Date(tomorrow.setDate(tomorrow.getDate() + 14));
   const maxDayString = maxDay.toISOString().split("T")[0];
 
-  const qwe = () => {
-    console.log("invalid");
-    setInValid(true);
-  };
-
   return (
     <label className={styles.label}>
       <p className={styles.name}>
