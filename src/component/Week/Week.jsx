@@ -80,12 +80,20 @@ export const Week = ({ weather }) => {
         ))}
       </ul>
       <div className={styles.btn_conteiner}>
-        <button disabled={prevDisable} onClick={handlePrevClick} type="button">
-          Prev week
-        </button>
-        <button disabled={nextDisable} onClick={handleNextClick} type="button">
-          Next week
-        </button>
+        <Button
+          className={styles.btn}
+          disabled={prevDisable}
+          click={handlePrevClick}
+          type={"button"}
+          name={"Prev week"}
+        />
+        <Button
+          className={styles.btn}
+          disabled={nextDisable}
+          click={handleNextClick}
+          type={"button"}
+          name={"Next week"}
+        />
       </div>
     </div>
   );

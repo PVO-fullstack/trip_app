@@ -21,3 +21,18 @@
   gap: 20px;
   justify-content: center;
 }
+
+.btn {
+  width: 100px;
+  /* padding: 5px;
+  border-radius: 5px;
+  border-color: #5c5cda;
+  background-color: #5c5cda;
+  color: #fff;
+  font-weight: 600; */
+}
+
+/* .btn:disabled {
+  background-color: #a6a6c092;
+  border-color: #a6a6c092;
+} */

@@ -13,7 +13,6 @@
 .modal {
   position: relative;
   width: 450px;
-  height: 309px;
   border-radius: 4px;
 
   background: white;
@@ -24,7 +23,31 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.close {
-  text-align: right;
-  padding: 10px;
+.modal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #eeeded;
+}
+
+.btn_conteiner {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid #eeeded;
+  justify-content: flex-end;
+}
+
+.cancel {
+  width: 60px;
+  background-color: #fff;
+  border-color: #ededed;
+  color: #000000;
+}
+
+.save {
+  width: 60px;
+  background-color: #42a3ce;
+  border-color: #42a3ce;
 }

@@ -7,3 +7,11 @@
   height: 100vh;
   padding: 20px;
 }
+
+.title {
+  font-weight: 100;
+}
+
+.title_bold {
+  font-weight: bold;
+}

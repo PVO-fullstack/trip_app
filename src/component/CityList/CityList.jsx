@@ -5,6 +5,7 @@ import { CityCard } from "../CityCard/CityCard";
 import styles from "./CityList.module.css";
 import { Modal } from "../Modal/Modal";
 import { Form } from "../Form/Form";
+import { Button } from "../Button/Button";
 
 const exampleTrip = [
   { city: "Kyiv", start: "2024-06-03", end: "2024-06-10", img: "/kyiv.jpeg" },
@@ -32,13 +33,16 @@ export const CityList = ({ click, active, city }) => {
     }
     const getTrips = localStorage.getItem("trip");
     if (getTrips) {
-      const parseTrips = JSON.parse(getTrips);
+      const qwe = JSON.parse(getTrips);
+      const parseTrips = qwe.sort(
+        (a, b) => new Date(a.start) - new Date(b.start)
+      );
+      console.log("parseTrips", parseTrips);
       setAllTrips(parseTrips);
       if (parseTrips.length > 3) {
         setIsBtn(true);
         const firstTrips = parseTrips.slice(firstTrip, firstTrip + 3);
         setTrips(firstTrips);
-        // setNextBtnDisable(false);
         return;
       }
       setTrips(parseTrips);
@@ -47,8 +51,6 @@ export const CityList = ({ click, active, city }) => {
     setTrips(exampleTrip);
     localStorage.setItem("trip", JSON.stringify(exampleTrip));
   }, [isOpen, firstTrip, city]);
-
-  console.log("city", city);
 
   const handleClick = () => {
     setIsOpen(true);
@@ -105,20 +107,20 @@ export const CityList = ({ click, active, city }) => {
       </ul>
       {isBtn && (
         <div className={styles.btn_conteiner}>
-          <button
+          <Button
+            className={styles.btn}
             disabled={prevBtnDisable}
-            onClick={handlePrevBtnClick}
-            type="button"
-          >
-            Prev
-          </button>
-          <button
+            click={handlePrevBtnClick}
+            type={"button"}
+            name={"Prev"}
+          />
+          <Button
+            className={styles.btn}
             disabled={nextBtnDisable}
-            onClick={handleNextBtnClick}
-            type="button"
-          >
-            Next
-          </button>
+            click={handleNextBtnClick}
+            type={"button"}
+            name={"Next"}
+          />
         </div>
       )}
     </>

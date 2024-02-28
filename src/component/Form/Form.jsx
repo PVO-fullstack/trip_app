@@ -30,11 +30,11 @@ export const Form = ({ close }) => {
   };
 
   return (
-    <form onSubmit={submit} className={styles.form}>
+    <form id="form" onSubmit={submit} className={styles.form}>
       <InputSelect title={"City"} />
       <InputDate title={"Start date"} name={"start"} />
       <InputDate title={"End date"} name={"end"} />
-      <div className={styles.btn_conteiner}>
+      {/* <div className={styles.btn_conteiner}>
         <Button
           className={styles.cancel}
           click={() => close()}
@@ -42,7 +42,7 @@ export const Form = ({ close }) => {
           name={"Cancel"}
         />
         <Button className={styles.save} type={"submit"} name={"Save"} />
-      </div>
+      </div> */}
     </form>
   );
 };

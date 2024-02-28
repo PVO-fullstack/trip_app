@@ -4,6 +4,13 @@
   color: black;
 }
 
+.input {
+  margin-top: 10px;
+  height: 30px;
+  border: 2px solid #eeeded;
+  outline: none;
+}
+
 .required {
   color: red;
 }

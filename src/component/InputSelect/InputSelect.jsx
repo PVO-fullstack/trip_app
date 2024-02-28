@@ -24,8 +24,7 @@ export const InputSelect = ({ title }) => {
           name="city"
         >
           <option
-            className={isOpen ? styles.placeholder : ""}
-            // selected
+            className={isOpen ? styles.none : styles.placeholder}
             disabled
             value="Please select a city"
           >

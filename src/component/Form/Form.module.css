@@ -1,22 +1,22 @@
 .form {
   display: grid;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 50px 20px;
 }
 
-.btn_conteiner {
+/* .btn_conteiner {
   margin-top: 30px;
+  margin-left: auto;
   display: flex;
   gap: 10px;
 }
 
 .cancel {
   width: 60px;
-  padding: 5px;
   background-color: #fff;
   border-color: #ededed;
-  font-weight: 600;
+  color: #000000;
 }
 
 .save {
@@ -26,4 +26,4 @@
   color: #fff;
   border-color: #42a3ce;
   font-weight: 600;
-}
+} */

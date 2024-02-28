@@ -33,7 +33,9 @@ export default function Home() {
     <main>
       <div className={styles.conteiner}>
         <div className={styles.weather_list}>
-          <h1>Weather Forecast</h1>
+          <h1 className={styles.title}>
+            Weather <span className={styles.title_bold}>Forecast</span>
+          </h1>
           <Search search={onSeach} />
           <CityList city={city} active={active} click={onCardClick} />
           {cityWeather && <Week weather={cityWeather} />}

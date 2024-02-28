@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./Search.module.css";
+import Image from "next/image";
 
 export const Search = ({ search }) => {
   const [allTrips, setAllTrips] = useState();
@@ -28,10 +29,18 @@ export const Search = ({ search }) => {
     <div className={styles.conteiner}>
       <label>
         <input
+          className={styles.input}
           onChange={onSearch}
           placeholder="Search your trip"
           type="search"
           name="search"
+        />
+        <Image
+          className={styles.icon}
+          src="/search.svg"
+          alt="search icon"
+          width={20}
+          height={20}
         />
       </label>
     </div>
