@@ -16,13 +16,6 @@
   transform: scale(1.05);
 }
 
-/* .item:hover .description,
-.item:active .description {
-  border-left: 1px solid #ededed;
-  border-right: 1px solid #ededed;
-  border-bottom: 1px solid #ededed;
-} */
-
 .description {
   display: flex;
   flex-direction: column;

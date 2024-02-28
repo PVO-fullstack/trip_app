@@ -27,7 +27,6 @@ export const CityList = ({ click, active, city }) => {
       const parseTrips = qwe.sort(
         (a, b) => new Date(a.start) - new Date(b.start)
       );
-      console.log("parseTrips", parseTrips);
       setAllTrips(parseTrips);
       if (parseTrips.length > 3) {
         setIsBtn(true);
@@ -43,7 +42,6 @@ export const CityList = ({ click, active, city }) => {
   }, [isOpen, firstTrip]);
 
   useEffect(() => {
-    console.log("city2", city);
     if (city) {
       if (city.length > 3) {
         setIsBtn(true);
@@ -54,8 +52,6 @@ export const CityList = ({ click, active, city }) => {
       setTrips(city);
     }
   }, [city]);
-
-  console.log("city", city);
 
   const handleClick = () => {
     setIsOpen(true);

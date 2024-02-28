@@ -52,8 +52,6 @@ export const Week = ({ weather }) => {
     setNextDisable(false);
   };
 
-  console.log("firstWeek", firstWeek, weekNumber, weather?.length);
-
   return (
     <div className={styles.conteiner}>
       <h2>Week</h2>
