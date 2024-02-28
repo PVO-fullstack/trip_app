@@ -14,7 +14,7 @@ export const Search = ({ search }) => {
       const parseTrips = JSON.parse(getTrips);
       setAllTrips(parseTrips);
     }
-  }, []);
+  }, [searchTrip]);
 
   const onSearch = (e) => {
     const searchWord = e.target.value;
@@ -22,6 +22,7 @@ export const Search = ({ search }) => {
     const searchCity = allTrips?.filter((item) =>
       item.city.toLowerCase().includes(word)
     );
+    setSearchTrip(searchCity);
     search(searchCity);
   };
 

@@ -21,16 +21,6 @@ export const CityList = ({ click, active, city }) => {
   const [isBtn, setIsBtn] = useState(false);
 
   useEffect(() => {
-    if (city) {
-      if (city.length > 3) {
-        setIsBtn(true);
-        const firstTrips = city.slice(firstTrip, firstTrip + 3);
-        setTrips(firstTrips);
-        return;
-      }
-      setTrips(city);
-      return;
-    }
     const getTrips = localStorage.getItem("trip");
     if (getTrips) {
       const qwe = JSON.parse(getTrips);
@@ -50,7 +40,22 @@ export const CityList = ({ click, active, city }) => {
     }
     setTrips(exampleTrip);
     localStorage.setItem("trip", JSON.stringify(exampleTrip));
-  }, [isOpen, firstTrip, city]);
+  }, [isOpen, firstTrip]);
+
+  useEffect(() => {
+    console.log("city2", city);
+    if (city) {
+      if (city.length > 3) {
+        setIsBtn(true);
+        const firstTrips = city.slice(firstTrip, firstTrip + 3);
+        setTrips(firstTrips);
+        return;
+      }
+      setTrips(city);
+    }
+  }, [city]);
+
+  console.log("city", city);
 
   const handleClick = () => {
     setIsOpen(true);
